@@ -24,6 +24,15 @@ ul {
 a {
     text-decoration: none;
     display: inline-block;
+    color: black;
+}
+
+button {
+    cursor: pointer;
+    background-color: inherit;
+    border: none;
+    font-family: var(--main);
+    font-size: inherit;
 }
 
 :root {
@@ -36,8 +45,193 @@ a {
 }
 
 /*mobile*/
-.nav--modile {
+.text-p, p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.text-h1 {
+    font-size: 42px;
+    font-weight: 500;
+}
+
+.text-h2 {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.text-h3 {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.text-h4 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.text_highlight-accent {
+    background-color: var(--accent);
+    display: block;
+    border-radius: 7px;
+    max-width: fit-content;
+}
+
+.text_highlight-light {
+    background-color: var(--background);
+    display: block;
+    border-radius: 7px;
+    max-width: fit-content;
+}
+
+.text_color-white {
+    color: var(--background);
+}
+
+.icon_size-m {
+    width: 40px;
+    height: 40px;
+}
+
+.logo {
+    height: 24px;
+    width: auto
+}
+
+.logo-comps {
+    height: 48px;
+    width: auto;
+}
+
+.burger {
+    height: 20px;
+    width: auto;
+}
+
+.button {
+    padding: 20px 35px;
+    font-size: 20px;
+    line-height: 28px;
+    border-radius: 14px;
+    font-family: var(--main);
+}
+
+.button_theme-light {
+    color: var(--text);
+    background-color: var(--background);
+    border: 1px solid var(--primary);
+}
+
+.button_theme-dark {
+    color: var(--background);
+    background-color: var(--primary);
+}
+
+.link {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.card {
+    border: 1px solid var(--primary);
+    border-radius: 45px;
+    box-shadow: 0 5px var(--primary);
+    margin-bottom: 5px;
+}
+
+.card_theme-light {
+    background-color: var(--secondary);
+}
+
+.card_theme-dark {
+    background-color: var(--primary);
+}
+
+.card_theme-accent {
+    background-color: var(--accent);
+}
+
+.card_size-l {
+    padding: 50px;
+}
+
+.desctiption {
     display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+/*layout*/
+
+.section {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.menu {
+    display: none;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.head__desc {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.head__image {
+    margin-top: -25px;
+    margin-bottom: -15px;
+
+}
+
+.head__logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.card-serv {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.card-serv__image {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.section-serv {
+    margin-top: 60px;
+    margin-bottom: 70px;
+}
+
+.section-serv__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 40px;
+}
+
+.item-desktop {
+    display: none;
 }
 
 /*tablets*/
@@ -45,19 +239,175 @@ a {
     
 }
 
-/*usual screens without space on sides*/
+/*usual screens without space on sides 768*/
 @media screen and (min-width: 768px) {
+
     
-}
+
+    .text-p, p {
+        font-size: 18px;
+        line-height: auto;
+        font-weight: 400;
+    }
+    
+    .text-h1 {
+        font-size: 60px;
+        font-weight: 500;
+    }
+    
+    .text-h2 {
+        font-size: 40px;
+        font-weight: 500;
+    }
+    
+    .text-h3 {
+        font-size: 30px;
+        font-weight: 500;
+    }
+    
+    .text-h4 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+    
+    .logo {
+        height: 56px;
+    }
+
+    .button {
+        max-width: fit-content;
+    }
+
+    .desctiption {
+        max-width: 60vw;
+    }
+
+    .burger {
+        height: 40px;
+        width: auto;
+    }
+
+    .desctiption {
+        flex-direction: row;
+        gap: 40px;
+        text-align: left;
+    }
+
+    .section {
+        padding-left: 100px;
+        padding-right: 100px;
+        max-width: 1440px;
+        margin: auto;
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 60px;
+        margin-bottom: 70px;
+    }
+
+    .head__desc {
+        height: 550px;
+    }
+
+    .head__image {
+        order: 1;
+        max-width: 40vw;
+        height: auto;
+        margin-left: auto;
+    }
+
+    .head__header {
+        max-width: 40vw;
+    }
+
+    .head__text {
+        max-width: 40vw;
+    }
+
+    .section-serv {
+        margin-top: 140px;
+        margin-bottom: 120px;
+    }
+
+    .section-serv__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        padding-top: 80px;
+    }
+
+    
+}   
 
 /*large screens with space on sides*/
-@media screen and (min-width: 1024px) {
-    
+@media screen and (min-width: 1330px) {
 
+    .item-desktop {
+        display: block;
+    }
+
+    .item-mobile {
+        display: none;
+    }
+
+    .desctiption {
+        max-width: 800px;
+    }
+
+    .menu {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .navigation__burger {
+        display: none;
+    }
+
+    .head__desc {
+        height: 500px;
+    }
+
+    .head__image {
+        max-width: 600px;
+        height: auto;
+    }
+
+    .head__header {
+        max-width: 530px;
+    }
+
+    .head__text {
+        max-width: 500px;
+    }
+
+    .card-serv {
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-between;
+        padding: 50px;
+    }
+    
+    .card-serv__desc {
+        display: flex;
+        flex-direction: column;
+        gap: 93px;
+    }
+    
+    .card-serv__button {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
 }
+
 
 /*large screens with space on sides second version*/
 @media screen and (min-width: 1440px) {
-    
+
 
 }
