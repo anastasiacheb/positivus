@@ -1,0 +1,63 @@
+html {
+    font-size: 16px;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--main);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+ul {
+    list-style-type: none;;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+:root {
+    --text: #000000;
+    --background: #FFFFFF;
+    --primary: #191A23;
+    --secondary: #F3F3F3;
+    --accent: #B9FF66;
+    --main: "Space Grotesk", sans-serif;
+}
+
+/*mobile*/
+.nav--modile {
+    display: flex;
+}
+
+/*tablets*/
+@media (min-width: 640px) {
+    
+}
+
+/*usual screens without space on sides*/
+@media screen and (min-width: 768px) {
+    
+}
+
+/*large screens with space on sides*/
+@media screen and (min-width: 1024px) {
+    
+
+}
+
+/*large screens with space on sides second version*/
+@media screen and (min-width: 1440px) {
+    
+
+}
