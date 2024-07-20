@@ -53,22 +53,22 @@ button {
 
 .text-h1 {
     font-size: 42px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .text-h2 {
     font-size: 36px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .text-h3 {
     font-size: 26px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .text-h4 {
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .text_highlight-accent {
@@ -110,6 +110,16 @@ button {
     height: 13px;
 }
 
+.icon-arrow {
+    display: flex;
+}
+
+.icont-dot {
+    width: 13px;
+    height: 13px;
+}
+
+
 .logo {
     height: 24px;
     width: auto
@@ -149,6 +159,33 @@ button {
     line-height: 28px;
 }
 
+.image__wrap {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.image_style-accent {
+    mask-image: url(icons/mask.svg);
+    mask-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.image__shadow_style-accent {
+    /*mask-image: url(icons/mask.svg);
+    mask-repeat: no-repeat;*/
+    top: 5px;
+    left: 5px;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: -1;
+}
+
+
+
 .card {
     border: 1px solid var(--primary);
     border-radius: 45px;
@@ -187,6 +224,25 @@ button {
 
 .block_theme-light {
     background-color: var(--secondary);
+}
+
+.block_theme-dark {
+    background-color: var(--primary);
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 60px auto 0 auto;
+}
+
+.pagination__dots {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    height: 14px;
 }
 
 /*layout*/
@@ -350,7 +406,106 @@ button {
     overflow: hidden;
 }
 
+.card-quest__h1 {
+    font-size: 30px;
+    font-weight: 600;
+}
 
+.card-quest__h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-team__icon {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.card-team__header {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid var(--text);
+    padding-bottom: 20px;
+    align-items: end;
+}
+
+.card-team__desc {
+    padding-top: 20px;
+}
+
+.card-team {
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-team__cards-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.section-team__button {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-team {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.card-testi {
+    min-width: 100%;;
+}
+
+.card-testi__content {
+    border: 1px solid var(--accent);
+    border-radius: 45px;
+    padding: 30px;
+    position: relative;
+    margin-bottom: 28px;
+}
+
+.card-testi__content::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: var(--primary);
+    transform: rotate(45deg);
+    border-bottom: 1px solid var(--accent);
+    border-right: 1px solid var(--accent);
+    left: 48px;
+    bottom: -22px;
+}
+
+.card-testi__title {
+    padding-top: 20px;
+    padding-left: 67px;
+}
+
+.section-testi__cards-wrap {
+    display: flex;
+    overflow: auto;
+    gap: 30px;
+}
+
+.section-testi__content {
+    padding: 30px;
+}
+
+.section-testi {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
 
 .item-desktop {
     display: none;
@@ -365,33 +520,27 @@ button {
 @media screen and (min-width: 768px) {
 
     .item-desktop2 {
-        display: block;
+        display: inline-block;
     }
 
     .text-p, p {
         font-size: 18px;
-        line-height: auto;
-        font-weight: 400;
     }
     
     .text-h1 {
         font-size: 60px;
-        font-weight: 500;
     }
     
     .text-h2 {
         font-size: 40px;
-        font-weight: 500;
     }
     
     .text-h3 {
         font-size: 30px;
-        font-weight: 500;
     }
     
     .text-h4 {
         font-size: 20px;
-        font-weight: 500;
     }
 
     .icon_size-xs {
@@ -548,13 +697,58 @@ button {
     .section-quest {
         gap: 80px;
     }
+
+    .card-quest__h1 {
+        font-size: 60px;
+        font-weight: 600;
+    }
+    
+    .card-quest__h2 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .card-team__header {
+        padding-bottom: 28px;
+    }
+    
+    .card-team__desc {
+        padding-top: 28px;
+    }
+
+    .section-team__cards-wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: 80px;
+    }
+
+    .section-team__button {
+        width: auto;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .section-team {
+        margin-top: 140px;
+        margin-bottom: 100px;
+    }
+
+    .card-testi {
+        min-width: 600px;
+    }
+
+    .section-testi {
+        gap: 80px;
+    }
+    
 }   
 
 /*large screens with space on sides*/
 @media screen and (min-width: 1330px) {
 
     .item-desktop {
-        display: block;
+        display: inline-block;
     }
 
     .item-mobile {
