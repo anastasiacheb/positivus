@@ -154,6 +154,67 @@ button {
     background-color: var(--primary);
 }
 
+.radio {
+    display: flex;
+    gap: 15px;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+}
+
+.radio__button:not(:checked),
+.radio__button:checked {
+   width: 0;
+   height: 0;
+   position: absolute;
+}
+
+.radio__button:not(:checked) + .radio__label,
+.radio__button:checked + .radio__label {
+    line-height: 28px;
+    position: relative;
+    padding-left: 44px;
+    cursor: pointer;
+}
+
+.radio__button:not(:checked) + .radio__label::before,
+.radio__button:checked + .radio__label::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--text);
+    border-radius: 50%;
+    background-color: var(--background);
+}
+
+.radio__button:not(:checked) + .radio__label::after,
+.radio__button:checked + .radio__label::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent);
+    transition: all 0.2s;
+}
+
+.radio__button:not(:checked) + .radio__label::after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+.radio__button:checked + .radio__label::after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
 .link {
     font-size: 20px;
     line-height: 28px;
@@ -184,7 +245,47 @@ button {
     z-index: -1;
 }
 
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 0;
+}
 
+.form__field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form__input {
+    padding: 18px 20px;
+    border: 1px solid var(--primary);
+    border-radius: 14px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--main);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.form__message {
+    height: 132px;
+    resize: none;
+
+}
+
+.form__input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--main);
+}
+
+.form__input:focus {
+    border: 1px solid var(--accent);
+    outline: 1px solid var(--accent);
+}
 
 .card {
     border: 1px solid var(--primary);
@@ -507,6 +608,36 @@ button {
     gap: 40px;
 }
 
+.section-contact__radio {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 22px;
+    align-items: center;
+}
+
+.section-contact__input {
+    border-radius: 45px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    justify-content: center;
+}
+
+.section-contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.section-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 60px;
+    padding-bottom: 90px;
+}
+
 .item-desktop {
     display: none;
 }
@@ -553,8 +684,27 @@ button {
     }
 
     .button {
-        max-width: fit-content;
+        width: fit-content;
     }
+
+    .form {
+        gap: 25px;
+        padding: 0;
+    }
+    
+    
+    .form__input {
+        font-size: 18px;
+    }
+    
+    .form__message {
+        height: 190px;
+    }
+    
+    .form__input::placeholder {
+        font-size: 18px;
+    }
+    
 
     .desctiption {
         max-width: 60vw;
@@ -740,6 +890,41 @@ button {
 
     .section-testi {
         gap: 80px;
+    }
+
+    .section-contact__radio {
+        justify-content: start;
+        padding: 0;
+        gap: 35px;
+    }
+    
+    .section-contact__input {
+        padding: 0;
+        gap: 40px;
+    }
+    
+    .section-contact__form {
+        display: flex;
+        gap: 40px;
+        width: 50%;
+    }
+
+    .section-contact__button {
+        width: 100%;
+    }
+
+    .section-contact__content {
+        background: var(--secondary);
+        border-radius: 45px;
+        padding: 60px 0 80px 100px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .section-contact {
+        gap: 80px;
+        padding-top: 140px;
+        padding-bottom: 140px;
     }
     
 }   
