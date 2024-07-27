@@ -153,6 +153,7 @@ button {
     color: var(--text);
     background-color: var(--background);
     border: 1px solid var(--primary);
+    display: none;
 }
 
 .button_theme-dark {
@@ -287,6 +288,7 @@ button {
     background: #292A32;
     color: var(--background);
     padding: 21px 25px;
+    width: 100%;
 }
 
 .form__message {
@@ -735,15 +737,19 @@ button {
 }
 
 /*tablets*/
-@media (min-width: 640px) {
+@media (min-width: 768px) {
     
 }
 
 /*usual screens without space on sides 768*/
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
 
-    .item-desktop2 {
+    .item-desktop {
         display: inline-block;
+    }
+
+    .item-mobile {
+        display: none;
     }
 
     .text-p, p {
@@ -802,9 +808,18 @@ button {
         max-width: 60vw;
     }
 
-    .burger {
-        height: 40px;
-        width: auto;
+    .menu {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .navigation__burger {
+        display: none;
+    }
+
+    .form__input_theme-dark {
+        width: 285px;
     }
 
     .desctiption {
@@ -818,8 +833,8 @@ button {
     }
 
     .section {
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: 50px;
+        padding-right: 50px;
         max-width: 1440px;
         margin: auto;
     }
@@ -863,6 +878,26 @@ button {
         padding-top: 80px;
     }
 
+    .card-serv {
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-between;
+        padding: 50px;
+    }
+    
+    .card-serv__desc {
+        display: flex;
+        flex-direction: column;
+        gap: 93px;
+    }
+    
+    .card-serv__button {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
     .section-prop {
         position: relative;
         margin-top: 25px;
@@ -880,13 +915,12 @@ button {
         width: auto;
         position: absolute;
         top: -25px;
-        right: 14vw;
+        right: 10vw;
     }
 
     .section-case {
         margin-top: 140px;
         margin-bottom: 140px;
-        padding-right: 100px;
         gap: 80px;
     }
     
@@ -960,7 +994,7 @@ button {
 
     .section-team__cards-wrap {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 40px;
         margin-top: 80px;
     }
@@ -1025,7 +1059,7 @@ button {
     }
 
     .footer__wrap {
-        margin: 0 100px;
+        margin: 0 50px;
         padding: 55px 60px 50px 60px;
         border-top-left-radius: 45px;
         border-top-right-radius: 45px;
@@ -1061,14 +1095,6 @@ button {
         align-items: start;
     }
     
-    .footer__form {
-        flex-direction: row;
-        gap: 20px;
-        padding: 58px 40px;
-        border-radius: 14px;
-    }
-    
-    
     .footer__foot {
         flex-direction: row;
         gap: 40px;
@@ -1076,32 +1102,41 @@ button {
         padding-top: 50px;
     }
     
-}   
+} 
+
+@media screen and (min-width: 1150px) {
+
+    .section {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .footer__wrap {
+        margin: 0 100px;
+    }
+}
+
+@media screen and (min-width: 1230px) {
+
+    .button_theme-light {
+        display: block;
+    }
+
+    .section-team__cards-wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: 80px;
+    }
+}
 
 /*large screens with space on sides*/
 @media screen and (min-width: 1330px) {
-
-    .item-desktop {
-        display: inline-block;
-    }
-
-    .item-mobile {
-        display: none;
-    }
 
     .desctiption {
         max-width: 800px;
     }
 
-    .menu {
-        display: flex;
-        gap: 40px;
-        align-items: center;
-    }
-
-    .navigation__burger {
-        display: none;
-    }
 
     .head__desc {
         height: 500px;
@@ -1120,26 +1155,6 @@ button {
         max-width: 500px;
     }
 
-    .card-serv {
-        display: flex;
-        flex-direction: row;
-        gap: 0;
-        justify-content: space-between;
-        padding: 50px;
-    }
-    
-    .card-serv__desc {
-        display: flex;
-        flex-direction: column;
-        gap: 93px;
-    }
-    
-    .card-serv__button {
-        display: flex;
-        gap: 15px;
-        align-items: center;
-    }
-
     .section-prop__image {
         display: block;
         height: 394px;
@@ -1147,6 +1162,12 @@ button {
         position: absolute;
         top: -25px;
         right: 200px;
+    }
+
+    .footer__form {
+        flex-direction: row;
+        gap: 20px;
+        padding: 58px 40px;
     }
 }
 
