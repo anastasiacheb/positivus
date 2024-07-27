@@ -554,6 +554,11 @@ button {
 
 .card-quest {
     padding: 30px;
+    transition: all 0.3s;
+}
+
+.card-quest_open {
+    background: var(--accent);
 }
 
 .card-quest__wrap {
@@ -588,6 +593,10 @@ button {
 .card-quest__text_invisible {
     max-height: 0;
     overflow: hidden;
+}
+
+.card-quest__content {
+    transition: all 0.3s;
 }
 
 .card-quest__h1 {
@@ -646,7 +655,7 @@ button {
 }
 
 .card-testi {
-    min-width: 100%;;
+    width: calc(100vw - 100px);
 }
 
 .card-testi__content {
@@ -677,8 +686,13 @@ button {
 
 .section-testi__cards-wrap {
     display: flex;
-    overflow: auto;
     gap: 30px;
+    width: 9999px;
+}
+
+.section-testi__cards {
+    width: 100%;
+    overflow: hidden;
 }
 
 .section-testi__content {
@@ -689,6 +703,11 @@ button {
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+
+.section-testi__pagination {
+    max-width: calc((100vw - 230px)/2);
+    margin: auto;
 }
 
 .section-contact__radio {
@@ -1077,13 +1096,27 @@ button {
         margin-bottom: 100px;
     }
 
-    .card-testi {
-        min-width: 600px;
-    }
-
     .section-testi {
         gap: 80px;
     }
+
+    .section-testi__cards-wrap {
+        transform: translate(calc(((100vw - 100px - 30px)/4 + 15px) * (-1)), 0);
+    }
+
+    .card-testi {
+        max-width: calc((100vw - 130px)/2);
+    }
+
+    .section-testi__pagination {
+        max-width: calc((100vw - 130px)/2);
+    }
+
+    .section-testi__content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
 
     .section-contact__radio {
         justify-content: start;
@@ -1181,6 +1214,18 @@ button {
     .footer__wrap {
         margin: 0 100px;
     }
+
+    .section-testi__cards-wrap {
+        transform: translate(calc(((100vw - 200px - 30px)/4 + 15px) * (-1)), 0);
+    }
+
+    .card-testi {
+        max-width: calc((100vw - 230px)/2);
+    }
+
+    .section-testi__pagination {
+        max-width: calc((100vw - 230px)/2);
+    }
 }
 
 @media screen and (min-width: 1230px) {
@@ -1220,6 +1265,14 @@ button {
 
     .head__text {
         max-width: 500px;
+    }
+
+    .section-testi__cards-wrap {
+        transform: translate(calc(((1440px - 200px - 30px)/4 + 15px) * (-1)), 0);
+    }
+
+    .card-testi {
+        max-width: calc((1440px - 230px)/2);
     }
 
     .section-prop__image {
