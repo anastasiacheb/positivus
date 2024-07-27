@@ -3,7 +3,9 @@ html {
     background-color: var(--background);
     color: var(--text);
     font-family: var(--main);
+    position: relative;
 }
+
 
 * {
     margin: 0;
@@ -45,6 +47,12 @@ button {
 }
 
 /*mobile*/
+
+.body_disable-scroll {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: fixed;
+}
 .text-p, p {
     font-size: 16px;
     line-height: 24px;
@@ -137,8 +145,39 @@ button {
 }
 
 .burger {
-    height: 20px;
-    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.burger_active {
+    position: fixed;
+    right: 20px;
+    top: 30px;
+}
+
+.burger_active .bar:first-child {
+    transform: translate(0, 8px) rotate(45deg);
+    /*transform: rotate(45deg);*/
+}
+
+.burger_active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger_active .bar:last-child {
+    transform: translate(0, -8px) rotate(-45deg);
+    /*transform: rotate(45deg);*/
+}
+
+.bar {
+    width: 24px;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--text);
+    transition: all 0.3s;
 }
 
 .button {
@@ -381,7 +420,23 @@ button {
 }
 
 .menu {
-    display: none;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    transition: all ease-in 0.4s;
+}
+
+.menu_invisible {
+    transform: translate(100%, 0);
 }
 
 .navigation {
@@ -390,6 +445,7 @@ button {
     align-items: center;
     margin-top: 30px;
     margin-bottom: 40px;
+    position: relative;
 }
 
 .head__desc {
@@ -808,10 +864,21 @@ button {
         max-width: 60vw;
     }
 
+    .body_disable-scroll {
+        position: relative;
+    }
+
     .menu {
         display: flex;
+        flex-direction: row;
         gap: 40px;
-        align-items: center;
+        position: relative;
+        width: auto;
+        height: auto;
+    }
+
+    .menu_invisible {
+        transform: none;
     }
 
     .navigation__burger {
