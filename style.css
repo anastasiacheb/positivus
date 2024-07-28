@@ -127,11 +127,25 @@ button {
     display: flex;
 }
 
-.icont-dot {
-    width: 13px;
-    height: 13px;
+.icon-arrow_left {
+    transform: rotate(180deg);
+    color: #808080;
 }
 
+.icon-arrow_inactive {
+    filter: invert(67%) sepia(0%) saturate(425%) hue-rotate(134deg) brightness(75%) contrast(86%);
+    cursor: auto;
+}
+
+.icon-dot {
+    width: 13px;
+    height: 13px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg) brightness(103%) contrast(103%);
+}
+
+.icon-dot_active {
+    filter: invert(83%) sepia(25%) saturate(862%) hue-rotate(39deg) brightness(106%) contrast(110%);
+}
 
 .logo {
     height: 24px;
@@ -401,7 +415,6 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 600px;
     margin: 60px auto 0 auto;
 }
 
@@ -706,7 +719,7 @@ button {
 }
 
 .section-testi__pagination {
-    max-width: calc((100vw - 230px)/2);
+    max-width: calc(100vw - 100px);
     margin: auto;
 }
 
@@ -1101,7 +1114,7 @@ button {
     }
 
     .section-testi__cards-wrap {
-        transform: translate(calc(((100vw - 100px - 30px)/4 + 15px) * (-1)), 0);
+        transform: translate(calc(((100vw - 100px - 30px)/4 + 30px) * (-1)), 0);
     }
 
     .card-testi {
@@ -1272,6 +1285,10 @@ button {
     }
 
     .card-testi {
+        max-width: calc((1440px - 230px)/2);
+    }
+
+    .section-testi__pagination {
         max-width: calc((1440px - 230px)/2);
     }
 
