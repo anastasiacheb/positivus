@@ -32,3 +32,42 @@ for (let g = 0; g < accButtons.length; g++){
         }
     });
 }
+
+/*carousel*/
+
+let arrowRight = document.querySelector(".icon-arrow_right");
+let arrowLeft = document.querySelector(".icon-arrow_left");
+let dots = document.querySelectorAll(".icon-dot");
+let testiCard = document.querySelectorAll(".card-testi");
+let dotNumber = 0;
+let cardTranslateX = 0;
+let cardWrap = document.querySelector(".section-testi__cards-wrap");
+
+
+arrowRight.addEventListener("click", () => {
+    if (dotNumber < 4) {
+        dots[dotNumber].classList.remove("icon-dot_active");
+        dots[dotNumber+1].classList.add("icon-dot_active");
+        dotNumber += 1;
+        cardTranslateX += testiCard[1].scrollWidth + 30;
+        cardWrap.style.transform = `translate(-${cardTranslateX}px)`;
+    }
+    arrowLeft.classList.remove("icon-arrow_inactive");
+    if (dotNumber == 4) {
+        arrowRight.classList.add("icon-arrow_inactive")
+    }
+})
+
+arrowLeft.addEventListener("click", () => {
+    if (dotNumber > 0) {
+        dots[dotNumber].classList.remove("icon-dot_active");
+        dots[dotNumber-1].classList.add("icon-dot_active");
+        dotNumber -= 1;
+        cardTranslateX -= testiCard[1].scrollWidth + 30;
+        cardWrap.style.transform = `translate(-${cardTranslateX}px)`;
+    }
+    arrowRight.classList.remove("icon-arrow_inactive");
+    if (dotNumber == 0) {
+        arrowLeft.classList.add("icon-arrow_inactive")
+    }
+})
