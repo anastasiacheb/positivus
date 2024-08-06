@@ -120,7 +120,8 @@ button {
 
 .icon_size-xs {
     width: 13px;
-    height: 13px;
+    height: auto;
+    transform: all 0.3s;
 }
 
 .icon-arrow {
@@ -583,6 +584,13 @@ button {
     align-items: center;
 }
 
+.card-quest__icon {
+    display: block;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
 .card-quest__desc {
     display: flex;
     gap: 33px;
@@ -868,7 +876,7 @@ button {
 
     .icon_size-xs {
         width: 25px;
-        height: 25px;
+        height: auto;
     }
     
     .logo {
